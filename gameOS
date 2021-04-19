@@ -1,0 +1,319 @@
+import random
+import os
+import time
+import colorama
+from colorama import Fore
+import turtle
+from turtle import *
+colorama.init()
+wn = turtle.Screen()   
+wn.bgcolor('light blue')
+wn.screensize(100000,100000)
+     
+def f():
+ t.forward(10)
+def b():
+ t.backward(10)
+def l():
+  hi.left(25)
+def r():
+ hi.right(25)
+def ex():
+ wn.bye()
+ col()
+
+def col():
+   import random
+   import os
+   import time
+   import colorama
+   from colorama import Fore
+   import turtle
+   from turtle import *
+   colorama.init()
+   wn = turtle.Screen()   
+   wn.bgcolor('light blue')
+   wn.screensize(100000,100000)
+   coise = input("rps[r] hangman[h] madlibs[m] calculator[c] tictactoe[t] drawing[d] exit[e]: ")
+   if coise == "r" or coise == "R":
+        y = int(input("rock[1] paper[2] scissors[3]: "))
+        r = random.randint(1, 3)
+        if r == 1 and y == 1:
+            print("tie")
+            time.sleep(1)
+            os.system('clear')
+            col()
+        elif r == 2 and y == 2:
+            print("tie")
+            time.sleep(1)
+            os.system('clear')
+            col()
+        elif r == 3 and y == 3:
+            print("tie")
+            time.sleep(1)
+            os.system('clear')
+            col()
+        elif r == 1 and y == 3:
+            print("you win")
+            time.sleep(1)
+            os.system('clear')
+            col()
+        elif r == 2 and y == 1:
+            print("you win")
+            time.sleep(1)
+            os.system('clear')
+
+            col()
+        elif r == 3 and y == 2:
+            print("you win")
+            time.sleep(1)
+            os.system('clear')
+            col()
+        elif r == 3 and y == 1:
+            print("you lose")
+            time.sleep(1)
+            os.system('clear')
+            col()
+        elif r == 2 and y == 1:
+            print("you lose")
+            time.sleep(1)
+            os.system('clear')
+            col()
+        elif r == 2 and y == 3:
+            print("you lose")
+            time.sleep(1)
+            os.system('clear')
+            col()
+
+   elif coise == "h" or coise == "H":
+        worbank = ["bank", "python", "marker", "html", "team", "you"]
+        answer_num = random.randint(0, 5)
+        answer = worbank[answer_num]
+        print("the possible combinations  is {}".format(worbank))
+        unscore = "_ " * len(answer)
+        print("the len of the word is {}".format(len(answer)))
+        emergency = 0
+        gess = 6
+        stages = [
+            """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     / \\
+                   -
+                   """, """
+                   --------
+                   |      |
+                   |      O
+                   |     \\|/
+                   |      |
+                   |     /
+                   -
+                   """, """
+                  --------
+                  |      |
+                  |      O
+                  |     \\|/
+                  |      |
+                  |
+                  -
+                  """, """
+                  --------
+                  |      |
+                  |      O
+                  |     \\|
+                  |      |
+                  |
+                  -
+                   """, """
+                   --------
+                  |      |
+                  |      O
+                  |      |
+                  |      |
+                  |
+                  -
+                   """, """
+                  --------
+                  |      |
+                  |      O
+                  |
+                  |
+                  |
+                  -
+                  """, """
+                   --------
+                  |      |
+                  |      
+                  |
+                  |
+                  |
+                  -
+                  """
+        ]
+        coreectt = 0
+        agan = []
+        while gess > 0:
+            print(worbank)
+            if coreectt == len(answer):
+                print("you win the answer  was {}".format(answer))
+                time.sleep(1)
+                os.system('clear')
+
+                col()
+            user = input("enter A-Z: ")
+            if user in agan:
+                print("you all ready said that")
+                time.sleep(1)
+                os.system("clear")
+            elif user in answer and user not in agan:
+                print("correct")
+                coreectt += 1
+                agan.append(user)
+                time.sleep(1)
+                os.system('clear')
+            else:
+                print("incorrect")
+                gess -= 1
+                if gess == 6:
+                    print(stages[6])
+                    time.sleep(1)
+                    os.system('clear')
+                elif gess == 5:
+                    print(stages[5])
+                    time.sleep(1)
+                    os.system('clear')
+                elif gess == 4:
+                    print(stages[4])
+                    time.sleep(1)
+                    os.system('clear')
+                elif gess == 3:
+                    print(stages[3])
+                    time.sleep(1)
+                    os.system('clear')
+                elif gess == 1:
+                    print(stages[2])
+                    time.sleep(1)
+                    os.system('clear')
+                elif gess == 1:
+                    print(stages[1])
+                    time.sleep(1)
+                    os.system('clear')
+                elif gess == 0:
+                    print("you lose the answer was {}".format(answer))
+                    time.sleep(0.50)
+                    os.system('clear')
+                    col()
+        print("you lose the answer was {}".format(answer))
+        time.sleep(0.50)
+        os.system('clear')
+        col()
+   elif coise == "m" or coise == "M":
+        colorama.init()
+        cange = [
+            "boy", "girl", "number", "place", "year", "date", "time", "name"
+        ]
+        i = []
+        while len(i) != 8:
+            i.extend(input("pls enter {}: ".format(cange[len(i)])))
+        print(
+            "at {} {} met {} and went on a adventure  they went to the {}'s big city they asked everyone if they found any power stars  someone called {} said they saw a the power star at the woodland mansion they had a map of the city  they found the woodland mansion and they found the power star and restored peace to the world"
+            .format(i[3], i[0], i[1], i[3], i[7]))
+        print(Fore.LIGHTMAGENTA_EX + "the end")
+        print('\033[39m')
+        time.sleep(5)
+        os.system('clear')
+        col()
+   elif coise == "c" or coise == "C":
+        one = int(input("input number one to one hundred:"))
+        sec = int(input("input number another one to one hundred: "))
+        way = input("add[a] multiplication[t] division[d] subtraction[s]: ")
+        if way == "a":
+            print(one + sec)
+            time.sleep(2)
+            os.system('clear')
+            col()
+        elif way == "s":
+            print(one - sec)
+            time.sleep(2)
+            os.system('clear')
+            col()
+        elif way == "t":
+            print(one * sec)
+            time.sleep(2)
+            os.system('clear')
+            col()
+        elif way == "d":
+            print(one / sec)
+            time.sleep(2)
+            os.system('clear')
+            col()
+   elif coise == "t":
+        print("out of order")
+        time.sleep(2)
+        os.system('clear')
+        col()
+   elif coise == "d" or coise == "D":
+     go = 0
+     while True:
+       go = input("up[u] down[d] left[l] right[r] exit[ex]: ")     
+       if go == "u":
+         turtle.forward(10)
+         os.system("clear")
+       elif go == "d":
+         turtle.backward(10)
+         os.system("clear")
+       elif go == "l":
+         turtle.left(25)
+         os.system("clear")
+       elif go == "r":
+         turtle.right(25)
+         os.system("clear")
+       elif go == "ex":
+         col()
+         wn.bye()
+         os.system("clear")
+   elif coise == "e" or coise == "E":
+     print("bye")
+     time.sleep(0.50)
+     os.system("clear")
+     print("thanks for trying gameOS")
+     exit()
+   elif coise != "r" or coise != "h" or coise != "m" or coise != "c" or coise != "t" or coise != "e" or coise != "R" or coise != "H" or coise != "M" or coise != "C" or coise != "E" or coise == "d" or coise == "D":
+        print("invalid command")
+        time.sleep(0.50)
+        os.system('clear')
+        col()
+def f():
+ hi.forward(10)
+def b():
+ hi.backward(10)
+def l():
+  hi.left(25)
+def r():
+ hi.right(25)
+def ex():
+ wn.bye()
+ col()
+boot = """boot"""
+print("welcome to gameOS")
+time.sleep(0.5)
+boot_is_act = input("type '{}' to start: ".format(boot))
+hi = 0
+if boot_is_act == "boot" or boot_is_act == "BOOT" or boot_is_act == "Boot":
+ col()
+else:
+  while hi <= 5:
+   print("exiting.")
+   time.sleep(0.5)
+   os.system("clear")
+   print("exiting..")
+   time.sleep(0.5)
+   os.system("clear")
+   print("exiting...")
+   time.sleep(0.5)
+   os.system("clear")
+   hi += 1
+  exit()
